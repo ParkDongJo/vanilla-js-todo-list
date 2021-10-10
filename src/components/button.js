@@ -1,9 +1,11 @@
-const button = ({ name, type, onClick } ) => {
-  const button = document.createElement("button")
+const Button = ({ name, type, onClick } ) => {
+  const el = document.createElement("button");
 
-  button.type = type
-  button.innerText = name
-  button.addEventListener("click", onClick)
+  el.type = type;
+  el.innerText = name;
+  el.addEventListener("click", onClick);
 
-  return button
-}
+  return el;
+};
+
+export default Button;
