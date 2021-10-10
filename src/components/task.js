@@ -1,18 +1,23 @@
-const task = (el, options) => {
+import Button from './Button'
 
-  const render = () => {
-    el.append("<li>Item<li>")
+const Task = ({ text }) => {
+  const el = document.createElement("li");
+
+  if (text) {
+    el.innerText = text;
   }
+  el.appendChild(Button({
+    type: "button",
+    name: "완료",
+    onClick: () => {}
+  }))
+  el.appendChild(Button({
+    type: "button",
+    name: "삭제",
+    onClick: () => {}
+  }))
 
-  render()
+  return el;
+};
 
-  el.addEventListener("click",() => {
-
-  })
-}
-
-/**
- * addEventListener의 Event 종류
- * https://developer.mozilla.org/ko/docs/Web/Events
- * 
- */
+export default Task;
