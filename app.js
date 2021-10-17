@@ -1,2 +1,5 @@
+import Home from "./src/pages/Home.js"
 
-const one = document.getElementById('app-id');
+if (location.pathname === "/") {
+  Home();
+}

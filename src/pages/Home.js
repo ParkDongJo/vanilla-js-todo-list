@@ -1,12 +1,11 @@
-import Task from "./components/Task"
-import List from "./components/List"
+import TaskList from "../components/TaskList.js";
+import useHome from "./../services/useHome.js";
 
 const Home = () => {
-  const datas = [];
-  const li = Task({});
-  const list = List({ li, datas });
+  const { datas } = useHome()
+  const tasks = TaskList({ datas });
   
-  document.getElementById('app').innerHTML = list
+  document.getElementById('app').append(tasks);
 };
 
 export default Home;
