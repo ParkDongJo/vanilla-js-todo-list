@@ -1,11 +1,8 @@
-import Button from './Button'
+import Button from './Button.js'
 
-const Task = ({ text }) => {
+const Task = () => {
   const el = document.createElement("li");
 
-  if (text) {
-    el.innerText = text;
-  }
   el.appendChild(Button({
     type: "button",
     name: "완료",
@@ -17,7 +14,12 @@ const Task = ({ text }) => {
     onClick: () => {}
   }))
 
-  return el;
+  const setText = (text) => {
+    console.log("dongjo : ", text)
+    el.innerText = text;
+  };
+
+  return { li: el, setText };
 };
 
 export default Task;
